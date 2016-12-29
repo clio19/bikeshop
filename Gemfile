@@ -16,6 +16,8 @@ gem 'rake', '~> 0.9.6'
 #
 # $ rhc env set BUNDLE_WITHOUT="development test postgresql"
 #
+
+
 group :development, :test do
   gem 'sqlite3'
   gem 'minitest'
@@ -66,3 +68,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# FOTOS
+gem 'carrierwave'
+gem 'mini_magick'
