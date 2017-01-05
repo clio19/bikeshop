@@ -71,3 +71,6 @@ gem 'spring',        group: :development
 # FOTOS
 gem 'carrierwave'
 gem 'mini_magick'
+
+# LOGIN
+gem 'devise'
