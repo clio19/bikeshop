@@ -74,3 +74,6 @@ gem 'mini_magick'
 
 # LOGIN
 gem 'devise'
+
+# CORS
+gem 'rack-cors', :require => 'rack/cors'
