@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :messages
+
   get 'admin/index'
   get 'admin/products'
 
