@@ -73,7 +73,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # LOGIN
-gem 'devise', '4.0.3'
+gem 'devise', '3.0.0.rc'
+
 
 
 # CORS
