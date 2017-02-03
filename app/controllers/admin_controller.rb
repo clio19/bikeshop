@@ -3,9 +3,9 @@ class AdminController < ApplicationController
 before_action :authenticate_admin!
 
   def index
+  	@bikes = Product.all
   end
 
-   def products
-      @products = Product.all
-  end
+
+
 end

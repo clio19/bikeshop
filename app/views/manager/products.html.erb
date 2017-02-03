@@ -1,0 +1,39 @@
+
+
+<h1>Listagem de Bicicletas</h1>
+<div class="table-responsive">
+  <table class="table table-bordered">
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Modelo</th>
+      <th>Vendedor</th>
+      <th>Preço</th>
+      <th>Fotografia</th>
+      <th>Descrição</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to  product.name %></td>
+        <td><%= product.model %></td>
+        <td><%= product.seller %></td>
+        <td><%= product.price %></td>
+        <td><%= image_tag product.picture_url(:thumb) if product.picture? %></td>
+        <td><%= product.description %></td>
+        <td><%= link_to 'Mostrar', product %></td>
+        <td><%= link_to 'Editar', edit_product_path(product) %></td>
+        <td><%= link_to 'Destruir', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'Introduzir uma nova Bicicleta', new_product_path, :class => "btn btn-info"%>

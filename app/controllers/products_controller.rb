@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
     layout "frontend", :only => [:index, :show]
 
-    before_action :authenticate_admin! , :except => [:index,:show] 
+    before_action :authenticate_manager! , :except => [:index,:show] 
 
   # GET /products
   # GET /products.json
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to admin_products_path, notice: 'Product was successfully created.' }
+        format.html { redirect_to manager_products_path, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }

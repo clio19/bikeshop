@@ -1,0 +1,27 @@
+<h1>Listagem de mensagens para apoio aos Produtos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Vista ?</th>
+      <th>tipo </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.title %></td>
+       
+        <td><% if message.status %> VISTO <% else %> Não Visto <% end %></td>
+        <td><%if message.tipo %> Para Produtos <% end %></td>
+        <td><%= link_to 'mostar', message %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

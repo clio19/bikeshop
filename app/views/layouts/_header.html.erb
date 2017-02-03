@@ -12,31 +12,24 @@
 						</label>
 						<input id="mobile_menu" type="checkbox">
 					   <ul class="nav">
-						  <li class="dropdown1"><a href="bicycles.html">BICYCLES</a>
+						  <li class="dropdown1"><a href="bicycles.html">BICICLETAS</a>
 							  <ul class="dropdown2">
 									<li><%= link_to " Loja Online", products_path  %></li>
 							  </ul>
 						  </li>
-						  <li class="dropdown1"><a href="parts.html">PARTS</a>
-							 <ul class="dropdown2">
-									<li><a href="parts.html">CHAINS</a></li>
-									<li><a href="parts.html">TUBES</a></li>
-									<li><a href="parts.html">TIRES</a></li>
-									<li><a href="parts.html">DISC BREAKS</a></li>
-							  </ul>
+						
 						 </li>      
-						 <li class="dropdown1"><a href="accessories.html">ACCESSORIES</a>
-							 <ul class="dropdown2">
-									<li><a href="accessories.html">LOCKS</a></li>
-										<li><a href="accessories.html">HELMETS</a></li>
-										<li><a href="accessories.html">ARM COVERS</a></li>
-										<li><a href="accessories.html">JERSEYS</a></li>
-							  </ul>
+						
 						 </li>               
-						 <li class="dropdown1">
-							  <%= link_to('Login', new_admin_session_path)  %> 
+						 <li class="dropdown1"><a href="#">LOGIN</a>
+						  <ul class="dropdown2">
+									<li> <%= link_to('Adimintrador', new_admin_session_path)  %> </li>
+									<li> <%= link_to('Gestor', manager_index_path)  %> </li>
+							  </ul>
 						 </li>
-						  <a class="shop" href="cart.html"><img src="../images/cart.png" alt=""/></a>
+						  <%= link_to  cart_path, :class => "shop" do %><img src="../images/cart.png" alt=""/>
+						<% end %>
+						 
 					  </ul>
 				 </div>
 				 <div class="clearfix"></div>

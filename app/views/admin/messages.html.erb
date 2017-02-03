@@ -17,10 +17,10 @@
         <td><%= message.title %></td>
         <td><%= message.body %></td>
         <td><%= message.status %></td>
-        <td><% if message.tipo %> Informação <% else %> Produto <% end %></td>
-        <td><%= link_to ' | Mostrar | ', message %></td> 
-        <td><%= link_to 'Editar | ', edit_message_path(message) %></td> 
-        <td><span class="label label-important" > <%= link_to 'Apagar', message, method: :delete, data: { confirm: 'Are you sure?' } %></span>  </td>
+        <td><%= message.tipo %></td>
+        <td><%= link_to 'Show', message %></td>
+        <td><%= link_to 'Edit', edit_message_path(message) %></td>
+        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-
+<%= link_to 'New Message', new_message_path %>

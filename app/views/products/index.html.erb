@@ -3,7 +3,7 @@
 
 <div class="bikes">    
    <div class="mountain-sec">
-     <h2>MOUNTAIN BIKES</h2>
+     <h2>LISTA BIKES</h2>
       <% @products.each do |product| %>
      <div class="bike">        
        <%= image_tag(product.picture_url, :width => 300) if product.picture.present? %>
@@ -12,7 +12,7 @@
              <h4><%= product.name %><span>Model: <%= product.model %></span></h4>
            </div>
            <div class="bike-cart">             
-             <a class="buy" href="single.html"><%= product.price %> € <p>COMPRAR</p></a>
+             <%= link_to  product do %><%= product.price %> € <p>COMPRAR</p><% end %>
            </div>
            <div class="clearfix"></div>
          </div>
@@ -24,7 +24,7 @@
        <div class="clearfix"></div>
     </div>
      
-    <div class="singlespeed-sec">
+   <!--  <div class="singlespeed-sec">
        <h2>SINGLE SPEED-BIKES</h2>
        <a href="single.html"><div class="bike">        
          <img src="images/s1.jpg" alt=""/>
@@ -152,7 +152,7 @@
          </div>
        </div></a>
        <div class="clearfix"></div>
-     </div>
+     </div> -->
      
    </div>
 </div>

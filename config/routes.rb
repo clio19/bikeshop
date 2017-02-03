@@ -1,13 +1,36 @@
 Rails.application.routes.draw do
+  devise_for :managers
   resources :messages
 
   get 'admin/index'
-  get 'admin/products'
+  get 'admin/messages'
+
+  get 'manager/index'
+  get 'manager/messages'
+  get 'manager/products'
 
   devise_for :admins
   get 'welcome/index'
 
+  get '/carrinho' => 'welcome#cart', as: 'cart'
+
   resources :products
+
+  namespace :api, defaults: {format: 'json'} do
+  namespace :v1 do
+    # devise_scope :user do
+    #   post 'registrations' => 'registrations#create', :as => 'register'
+    #   post 'sessions' => 'sessions#create', :as => 'login'
+    #   delete 'sessions' => 'sessions#destroy', :as => 'logout'
+    # end
+    resources :messages, only: [:index, :create, :destroy, :update]
+    # scope '/messages' do
+    #   # get 'messages' => 'messages#index', :as => 'messages'
+    #     get '/' => 'api_messages#index'
+    #     post '/' => 'api_messages#create'
+    # end
+  end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
