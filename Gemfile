@@ -73,7 +73,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # LOGIN
-gem 'devise', '3.0.0.rc'
+gem 'devise'
 
 
 

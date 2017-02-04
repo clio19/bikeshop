@@ -3,7 +3,7 @@
 
 <div class="bikes">    
    <div class="mountain-sec">
-     <h2>LISTA BIKES</h2>
+     <h2>LISTA BICICLETAS</h2>
       <% @products.each do |product| %>
      <div class="bike">        
        <%= image_tag(product.picture_url, :width => 300) if product.picture.present? %>
