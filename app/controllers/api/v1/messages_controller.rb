@@ -21,20 +21,22 @@ class Api::V1::MessagesController < ApplicationController
 # }'
   end
 
- def create 
-  respond_with :api, :v1, Message.create(message_params) 
-end 
-def destroy 
-  respond_with Message.destroy(params[:id]) 
-end 
+  def create
+    respond_with :api, :v1, Message.create(message_params)
+  end
 
-def update
- message = Message.find(params["id"])
- message.update_attributes(message_params)
- respond_with message, json: message 
-end 
+  def destroy
+    respond_with Message.destroy(params[:id])
+  end
+
+  def update
+   message = Message.find(params["id"])
+   message.update_attributes(message_params)
+   respond_with message, json: message
+  end
 
   private
+
     def set_message
       @message = Message.find(params[:id])
     end

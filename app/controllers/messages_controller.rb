@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
 
   before_action :authenticate_admin!, :except => [:create,:show]
 
-   layout "frontend", :only => [:new, :create]
+  layout "frontend", :only => [:new, :create]
 
   respond_to :html, :json
 
@@ -30,14 +30,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-   if @message.save!
-    redirect_to root_path , notice: "Success"
-  else
-    flash.now[:notice] = "Error"
-    render "new" 
+      @message = Message.new(message_params)
+     if @message.save!
+      redirect_to root_path , notice: "Success"
+    else
+      flash.now[:notice] = "Error"
+      render "new"
+    end
   end
-end
 
   def update
     @message.update(message_params)
@@ -50,6 +50,7 @@ end
   end
 
   private
+
     def set_message
       @message = Message.find(params[:id])
     end

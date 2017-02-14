@@ -161,3 +161,4 @@ GitHub.sublime-settings
 *.orig
 
 # End of https://www.gitignore.io/api/macos,rails,sublimetext,images,coffeescript,git
+public/uploads
